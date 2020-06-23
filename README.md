@@ -1,4 +1,4 @@
-# Definitive endoderm differentiation of human ESCs in G1 
+# Definitive endoderm differentiation of human ESCs in G1 phase of the cell cycle
 
 Source code of the manuscript ***Epigenetic regulations follow cell cycle progression during differentiation of human pluripotent stem cells*** ([bioRxiv](https://www.biorxiv.org)).
 
