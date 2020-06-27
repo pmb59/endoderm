@@ -2,7 +2,7 @@
 
 Source code of the manuscript:
 
-Pedro Madrigal, Siim Pauklin, Kim Jee Goh, Rodrigo Grandy, Anna Osnato, Daniel Ortmann, Stephanie Brown, Ludovic Vallier (2020) ***Epigenetic regulations follow cell cycle progression during differentiation of human pluripotent stem cells*** ([bioRxiv](https://www.biorxiv.org)).
+Pedro Madrigal, Siim Pauklin, Kim Jee Goh, Rodrigo Grandy, Anna Osnato, Daniel Ortmann, Stephanie Brown, Ludovic Vallier (2020) ***Epigenetic regulations follow cell cycle progression during differentiation of human pluripotent stem cells*** ([bioRxiv](https://doi.org/10.1101/2020.06.26.173211)).
 
 Data
 -------
