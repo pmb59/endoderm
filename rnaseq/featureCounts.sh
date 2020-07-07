@@ -1,3 +1,5 @@
+#!/bin/bash
+
 GTF='Homo_sapiens.GRCh38.76.gtf'
 
 A=$(ls *.bam )
