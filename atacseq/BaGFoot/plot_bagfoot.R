@@ -1,6 +1,3 @@
-setwd("/Users/pmb59/Desktop/unt")
-
-rm( list=objects() )
 
 library(hash)
 library(data.table)
@@ -23,12 +20,12 @@ head(df)
 dim(df)
 
 # first we filter the table to leave only genes differentially expressed during differentiation
-f1 <- as.character(read.csv("/Users/pmb59/Desktop/unt/DESeq2.Diff_Gene.Expression/signif.-h0_vs_h12.csv")$gene_name)
-f2 <- as.character(read.csv("/Users/pmb59/Desktop/unt/DESeq2.Diff_Gene.Expression/signif.-h12_vs_h24.csv")$gene_name)
-f3 <- as.character(read.csv("/Users/pmb59/Desktop/unt/DESeq2.Diff_Gene.Expression/signif.-h24_vs_h36.csv")$gene_name)
-f4 <- as.character(read.csv("/Users/pmb59/Desktop/unt/DESeq2.Diff_Gene.Expression/signif.-h36_vs_h48.csv")$gene_name)
-f5 <- as.character(read.csv("/Users/pmb59/Desktop/unt/DESeq2.Diff_Gene.Expression/signif.-h48_vs_h60.csv")$gene_name)
-f6 <- as.character(read.csv("/Users/pmb59/Desktop/unt/DESeq2.Diff_Gene.Expression/signif.-h60_vs_h72.csv")$gene_name)
+f1 <- as.character(read.csv("../DESeq2.Diff_Gene.Expression/signif.-h0_vs_h12.csv")$gene_name)
+f2 <- as.character(read.csv("../DESeq2.Diff_Gene.Expression/signif.-h12_vs_h24.csv")$gene_name)
+f3 <- as.character(read.csv("../DESeq2.Diff_Gene.Expression/signif.-h24_vs_h36.csv")$gene_name)
+f4 <- as.character(read.csv("../DESeq2.Diff_Gene.Expression/signif.-h36_vs_h48.csv")$gene_name)
+f5 <- as.character(read.csv("../DESeq2.Diff_Gene.Expression/signif.-h48_vs_h60.csv")$gene_name)
+f6 <- as.character(read.csv("../DESeq2.Diff_Gene.Expression/signif.-h60_vs_h72.csv")$gene_name)
 GOI <- unique(c(f1,f2,f3,f4,f5,f6))
 GOI
 
@@ -57,7 +54,7 @@ df$name[ which(df$name!='EOMES'    & df$name!='MIXL1'   & df$name!='GATA6'  & df
                & df$name!='CTCF'   & df$name!='FOXA2'   & df$name!='TP53' & df$name!='T' 
                & df$name!='FOSL1'  & df$name!='FOXO1'   & df$name!='FOXO3'
                & df$name!='FOXO4'  & df$name!='SMARCC1' & df$name!='NRF1') ] <- ''
-#df$name[ which(df$pvalue>0.01) ] <- ''
+
 
 library(ggplot2)
 library(ggrepel)
