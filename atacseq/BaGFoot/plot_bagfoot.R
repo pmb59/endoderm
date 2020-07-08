@@ -1,4 +1,3 @@
-
 library(hash)
 library(data.table)
 library(digest)
@@ -13,7 +12,6 @@ source('aux.R')
 #read bagfoot output
 dat <- read.table('T24_T48_On_consolidated_hotspot_footprint_depth_table.csv');
 gen_bagplot_chisq(dat, dataname1='T24', dataname2='T48')
-
 
 df <- read.csv("bagplot_cutcount_diff_total_footprinting_depth_T48-T24_qvalue_bagplot_output.csv")
 head(df)
