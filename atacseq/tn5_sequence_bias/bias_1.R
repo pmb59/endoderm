@@ -1,12 +1,10 @@
 ## Script to detect sequence-specific biases in ATAC-seq ATAC17.bam
 
-#extend for all chrs
+#for all chrs
 
 gc(reset=TRUE)
 
-
 G <- read.table("GRCh38_15.chrom.sizes", head=F)
-
 
 bam="ATAC17.bam"
 chrN = as.character(G$V1) #"chr22"  #c("chr21","chr22")
