@@ -1,7 +1,7 @@
 
+# Build "SeqBias.txt"(FootprintMixture) file for ATAC-seq
 
-#Build "SeqBias.txt"(FootprintMixture) file for ATAC-seq
-x<-read.table("GRCh38_Kmers.txt", head=F)  #relative freq of each 6-mer in the human genome - sum(x$V2)
+x<-read.table("GRCh38_Kmers.txt", head=F)  #relative freq of each 6-mer in the human genome 
 
 
 #jellyfish output processing (y)
