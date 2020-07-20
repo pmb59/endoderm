@@ -8,7 +8,7 @@ mkdir bootstrap_${i};
 done
 
 DATADIR="../mergedBams/"
-OUTDIR="../wellington";
+OUTDIR="../wellington"
 BED="../wellington/extended.bed"  # EPIGENODE_merged_ATAC_peaks.bed, extended 50bp each colum (start and end)
 
 #---------------------------------
