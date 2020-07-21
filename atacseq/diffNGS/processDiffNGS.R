@@ -1,8 +1,8 @@
-##USE Proper GTF Files! (same as in RNA-seq)
-#cat ensembl_76_transcriptome-GRCh38_15.gtf  | awk '$3 == "gene" {print $0}' > genes_ensembl_76_transcriptome-GRCh38_15.gtf 
-#rm ensembl_76_transcriptome-GRCh38_15.gtf
+## Use Proper GTF Files! 
+# cat ensembl_76_transcriptome-GRCh38_15.gtf  | awk '$3 == "gene" {print $0}' > genes_ensembl_76_transcriptome-GRCh38_15.gtf 
+# rm ensembl_76_transcriptome-GRCh38_15.gtf
 ##Count number of gene features 
-#wc -l genes_ensembl_76_transcriptome-GRCh38_15.gtf
+# wc -l genes_ensembl_76_transcriptome-GRCh38_15.gtf
 
 
 processDiffNGS <- function(rawPvals, results, CNDS, AbsFc, adjP,  plotpdf=F, Xmin=-5, Xmax=5, GTF=F, W=10e3 ) {
@@ -23,7 +23,6 @@ processDiffNGS <- function(rawPvals, results, CNDS, AbsFc, adjP,  plotpdf=F, Xmi
     
   }
   
-  #as.numeric(noquote(unlist(format(.Machine)))[1])
   zeroP <- which(results$pval == 0.0)
   results$pval[zeroP] <- as.numeric(noquote(unlist(format(.Machine)))[1])
   
