@@ -1,12 +1,9 @@
-# to create 'gene_expression_FPKM.csv'
-
 # Read counts
 fc <- read.table(file='featureCountsEndo.txt' , head=TRUE, sep='\t')
 head(fc)
 
 fcounts <- fc[, 7:ncol(fc)]
 dim(fcounts)
-
 
 rownames(fcounts) <- fc$Geneid
 head(fcounts)
@@ -21,16 +18,14 @@ library("NOISeq")
 mylength <- as.vector(fc$Length)
 names(mylength) <- fc$Geneid
 dim(mylength)
-head(mylength)  #dim(null)
+head(mylength)  
 
 
 mydata <- readData(data = fcounts, length = mylength, factors = cinfo)
 mydata
 
 myRPKM = rpkm(assayData(mydata)$exprs, long = mylength, k = 0, lc = 1)
-
-#colnames(myRPKM ) <- paste( cinfo$celltype, colnames(myRPKM )  ,sep='.')
-head(myRPKM)  # RPKMs
+head(myRPKM)  
 dim(myRPKM)
 
 FPKM <- data.frame( gene_id = rownames(myRPKM), 
@@ -48,7 +43,6 @@ head(FPKM)
 dim(FPKM)
 FPKM <- FPKM[ which(rowMeans(FPKM[,2:8]) != 0 ) , ]
 dim(FPKM)
-
 
 
 
@@ -85,13 +79,12 @@ head(x)
 x$gene_name <- as.character(x$gene_name)
 
 
-# Select Genes of Interest
+# Select Genes of Interest for the heatmap
 sel <- which(x$gene_name=="SOX2" | x$gene_name=="NANOG" | x$gene_name=="PRDM14" | x$gene_name=="POU5F1" |  x$gene_name=="OTX2" | 
 			#early induced
 			x$gene_name=="ID1" | x$gene_name=="ID2" | x$gene_name=="ID3" | x$gene_name=="ID4" | x$gene_name=="DACT1" | x$gene_name=="BAMBI" | x$gene_name=="NOTUM" | x$gene_name=="WLS" | x$gene_name=="LEFTY1" | 
 			#mesendo
 			x$gene_name=="EOMES" | x$gene_name=="T"  |x$gene_name=="MIXL1"|x$gene_name=="FOXH1" |x$gene_name=="CER1" |
-			
 			#endoderm
 			 x$gene_name=="LZTS1" | x$gene_name=="SOX17" | x$gene_name=="GATA6" | x$gene_name=="FOXA2"| x$gene_name=="GSC"|x$gene_name=="LHX1"|x$gene_name=="HHEX"|x$gene_name=="TBX3"|x$gene_name=="CXCR4"|x$gene_name=="FOXC1"|x$gene_name=="GATA4"|
 			#mesoderm
@@ -100,9 +93,9 @@ sel <- which(x$gene_name=="SOX2" | x$gene_name=="NANOG" | x$gene_name=="PRDM14" 
 			x$gene_name=="PAX6" | x$gene_name=="SOX1"|  x$gene_name=="OLIG3" | x$gene_name=="GBX2" |
 			#Other 
 			 x$gene_name=="CTCF" | x$gene_name=="TP53" | x$gene_name=="NRF1" | x$gene_name=="TFAP2A" | x$gene_name=="TFAP2C"|
-       #HK
-       x$gene_name=="PGK1" | x$gene_name=="GAPDH" | x$gene_name=="LDHA" |
-      #AP-1 
+       			#HK
+       			x$gene_name=="PGK1" | x$gene_name=="GAPDH" | x$gene_name=="LDHA" |
+      			#AP-1 
 			 x$gene_name=="JUN" | x$gene_name=="JUNB" | x$gene_name=="JUND" | x$gene_name=="FOS"
 			 
 
@@ -131,8 +124,8 @@ colnames(y) <- x$gene_name[sel]
 head(y)
 
 
-#  New modification (July 2016)############
-library('ColorBrewer)
+##########
+library(ColorBrewer)
 library(ComplexHeatmap)
 library(circlize)
 library(viridis)
