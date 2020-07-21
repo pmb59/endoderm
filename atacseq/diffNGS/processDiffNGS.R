@@ -29,7 +29,6 @@ processDiffNGS <- function(rawPvals, results, CNDS, AbsFc, adjP,  plotpdf=F, Xmi
   
   #Correct P-values for multiple hypothesis testing- BH or Bonferroni (more conservative)
   results$Bonferroni.pval <- p.adjust(results$pval, method = "bonferroni")
-  #head(results)
   
   #report score ( differential peaks will be ranked by this score )
   baseline= (results$avg.C2 + results$avg.C1 ) / 2
@@ -61,29 +60,18 @@ plotpdf = FALSE;
     plot(frame=F, d1, ylim=c(0,YL), xlab="Peak Mean Fold-change", main=paste(rev(unique(CNDS)), collapse="_vs_") , xlim=c(Xmin,Xmax)) # plots the results 
     points(d2, lty=2, type='l')
     points(d3, lty=1, type='l', lwd=2, col='dodgerblue3')
-    #abline(v = 1, col="red", lwd=2)
     mtext(paste("total regions = " , nrow(results),"; ", length(Up), " Up; ",length(Down)," Down", sep="") )
     legend("topright", legend=c(expression( P <= adjP ), "n.s.", "diffNGS") , col=c("black","black","dodgerblue3"), bty="n", lty=c(1,2,1), lwd=2)
     dev.off()
     
-#    library(ggplot2)
-#    ggp <- data.frame(y=results[,5], x=results[,6], significant=results[,10],  score=results[,11])
-#    p <- ggplot(ggp, aes(x,y )  )
-#    p + geom_point( size=1, alpha=0.5, aes(color = significant ))  + scale_x_log10() +scale_y_log10() + xlab(paste("log10", "mean",rev(unique(CNDS))[1],sep=" ")) + ylab(paste("log10", "mean",rev(unique(CNDS))[2],sep=" "))   + scale_colour_brewer(palette="Set1")  +ggtitle(paste("R =", round(cor(ggp$x, ggp$y),3 ) ))  # , shape = factor(z) ))
-#    ggsave(file=paste(  paste(rev(unique(CNDS)), collapse="_vs_"), "diffNGS_scatterplot.pdf",sep="_"), height=4, width=5.2)
-    
-#    p2 <- ggplot(ggp, aes(x,y )  )
-#    p2 + geom_point( size=1,alpha=0.5, aes(colour = score ))  + scale_x_log10() +scale_y_log10() + xlab(paste("log10", "mean",rev(unique(CNDS))[1],sep=" ")) + ylab(paste("log10", "mean",rev(unique(CNDS))[2],sep=" "))    + scale_colour_gradient( limits=c(0, 100), high="gold", low="darkblue")    # , shape = factor(z) ))
-#    ggsave(file=paste(  paste(rev(unique(CNDS)), collapse="_vs_"), "diffNGS_scatterplot_scores.pdf",sep="_"), height=4, width=5)
-    
+   
   }
   
   
   
   results <- results[which(results$diff != FALSE)  ,]
   results <- results[order(results$diff.score, decreasing=TRUE),]
-  #head(results)
-  #tail(results)
+
   
   # Include closest genes in the table
   #Target genes (Wkb)
@@ -92,7 +80,7 @@ plotpdf = FALSE;
     write.table(x=results[,1:3], file = ranDomFileName, append = FALSE, quote = F, sep = "\t", row.names = F, col.names = F )
     
     system("chmod + bedtools")
-    system( paste("./bedtools window -w", W, "-a",ranDomFileName,"-b", GTF, ">", paste(ranDomFileName,"genes",sep="."), sep=" ") )   #> temp.genes
+    system( paste("./bedtools window -w", W, "-a",ranDomFileName,"-b", GTF, ">", paste(ranDomFileName,"genes",sep="."), sep=" ") )   
   
     raw <- read.table(paste(ranDomFileName,"genes",sep="."), head=F)
     
