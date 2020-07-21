@@ -1,4 +1,4 @@
-# Get regions of open chromatin (atac-seq) changing significantly between condition 1 (C1) and condition 2 (C2) 
+# Get regions of open chromatin (ATAC-seq) changing significantly between condition 1 (C1) and condition 2 (C2) 
 
 args<-commandArgs(TRUE)
 
