@@ -1,10 +1,9 @@
 #!/bin/bash
 
 # f=$(ls *.fa)
-# for J in $(echo $f) ; do  # INVARIANT.fa
-# sh homer.sh $J
+# for J in $(echo $f) ; do 
+#   sh homer.sh $J
 # done
-
 
 FILE=$1
 
