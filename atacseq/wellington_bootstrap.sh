@@ -12,7 +12,7 @@ OUTDIR="../wellington"
 BED="../wellington/extended.bed"  # EPIGENODE_merged_ATAC_peaks.bed, extended 50bp each colum (start and end)
 
 #---------------------------------
-#Get differential footprints
+# Get differential footprints
 #---------------------------------
 #1
 wellington_bootstrap.py -p 16 -A -fdr 0.05 --FDR_limit -10 -fp 4,30,1 -fdriter 100 ${DATADIR}ATAC1-2.bam ${DATADIR}ATAC9-10.bam ${BED} ${OUTDIR}/bootstrap_h0_h12/h0_only ${OUTDIR}/bootstrap_h0_h12/h12_only 
