@@ -2,7 +2,6 @@
 
 # Submit one job per comparison
 
-
 export PATH=/software/perl-5.8.9/bin:$PATH
 
 file1=$1
@@ -63,7 +62,7 @@ then
 
 	cd ${wd}
 	#diffReps - Detect Differential Sites from ChIP-seq with Biological Replicates.
-	drDir="../diffreps/diffreps-master/bin/";
+	drDir="../diffreps-master/bin/";
 	chromFile="GRCh38_15.chrom.sizes";
 
 	perl5.8.9 ${drDir}diffReps.pl --treatment ${wd}${file3}.bed --control ${wd}${file1}.bed ${wd}${file2}.bed --report ${wd}output_results.txt --chrlen $chromFile --btr ${wd}${ctrl}.bed --bco ${wd}${ctrl}.bed --window $W --step $ST --gap $GAP --nsd $NSD --meth gt --pval 0.000001 --frag $frac --nproc 16 --noanno --nohs
