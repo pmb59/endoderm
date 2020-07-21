@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #working dir
-WDIR="/lustre/scratch117/cellgen/team204/pm12/scratch109/EPIGENODE-ATAC2/"
+WDIR=""
 
 
 #IDR analaysis for replicates
