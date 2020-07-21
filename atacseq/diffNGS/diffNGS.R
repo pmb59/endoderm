@@ -16,14 +16,14 @@
 # High RAM mem is required if fdamatrix object is large #
 ################################################################################################################
 
-diffNGS <- function(bedFile,  headerBed= TRUE, bigwigs , conditions , nbasis=50, pcs = 10, variation = 0.6, NB=20) {   #flank=100
+diffNGS <- function(bedFile,  headerBed= TRUE, bigwigs , conditions , nbasis=50, pcs = 10, variation = 0.6, NB=20) {   
  
-	fdamatrix <- list() #To store signal profiles of all datasets
+	fdamatrix <- list()  #To store signal profiles of all datasets
 
 	#Extend peak centre Upstream and Dowstream 'flank' bp
 	peaks <- readGeneric(bedFile, keep.all.metadata = FALSE)
-	start(peaks) <- start(peaks)  #- flank
-	end(peaks)   <- end(peaks)    #+ flank
+	start(peaks) <- start(peaks)  # - flank
+	end(peaks)   <- end(peaks)    # + flank
 	# Parameters in genomation for signal extraction form the bigwig
 	nBins = NB #(2*NB)+1  #(2*flank)+1
 	scaleData = FALSE  #Signal is already normalized
@@ -48,7 +48,6 @@ diffNGS <- function(bedFile,  headerBed= TRUE, bigwigs , conditions , nbasis=50,
 	
   	pdf(file=paste( paste(rev(unique(CNDS)),collapse="_vs_"), "mean", "pdf"  , sep='.')  )
   	par(mfrow=c(2,2))
-  
   	cls <- sort(rep(brewer.pal(4,"Accent")[1:length(unique(CNDS))]  ,2 ))  
   	for (k in 1:length(bigwigs) ){ 
   		plot(colMeans(fdamatrix[[k]],na.rm=TRUE),type="l", ylim=c(0,Ylim), lwd=3, main=conditions[k], xlab=paste(paste("#bins =",nBins, sep=" "), "; scaled region", sep=" " )  , ylab="normalized signal", cex.lab=1, col=cls[k] )
@@ -87,7 +86,7 @@ diffNGS <- function(bedFile,  headerBed= TRUE, bigwigs , conditions , nbasis=50,
 		pc <- pca.fd(fdobj=fdaData, nharm = pcs, harmfdPar=fdPar(fdaData),centerfns = FALSE)
 		
 		# Select the PC scores for the components which amount >= 'variation'
-		#print(pc$varprop)
+		# print(pc$varprop)
 		CS <- cumsum(pc$varprop)
 		requiredPCs <- which(CS >= variation)[1]
 		
@@ -109,7 +108,7 @@ diffNGS <- function(bedFile,  headerBed= TRUE, bigwigs , conditions , nbasis=50,
 	# report the P-values in a list of data.frames (PVALS)		
 	}		
 	
-	return(list(fdaprofiles=fdamatrix, p.values = PVALS ) ) # report Signal and Raw P-values 
+	return(list(fdaprofiles=fdamatrix, p.values = PVALS ) ) # report signal and raw p-values 
 
 
 }     
