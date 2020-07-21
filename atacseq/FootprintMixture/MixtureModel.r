@@ -67,10 +67,7 @@ MultMMixture_Full <- function( TF_Bed=c(), Cuts=c(), peakbed=c(), Pos_Ind=c(), D
 
 	
 	#PEDRO#########start###########
-  plot(Init_T[2,], type='l', col=alpha("darkred",0.5), xlab="Position (bp)",ylab="Background from Tn5 bias", frame=FALSE, lwd=2, main="", cex.lab=1.4   )  # lwd=2,xaxt="n",yaxt="n",xlab="",ylab="", frame=FALSE)
-#	axis(4)
-#	mtext("Background from Tn5 bias",side=4,line=3)
-#	legend("topright", legend=c("+","-","BG"),lty=c(1,1,1), col=c(alpha("blue",0.5),alpha("red",0.5),"black"), bty='n',cex = 0.5 )
+  	plot(Init_T[2,], type='l', col=alpha("darkred",0.5), xlab="Position (bp)",ylab="Background from Tn5 bias", frame=FALSE, lwd=2, main="", cex.lab=1.4   )  
 	#PEDRO#########end###########
   
 
