@@ -1,7 +1,3 @@
-#======================================================================================================
-# GO enrichment analysis with GOstats
-# author: P. Madrigal
-#======================================================================================================
 library(org.Hs.eg.db)
 library(GO.db)
 library(GOstats)
@@ -12,13 +8,11 @@ library(biomaRt)
 library(ggplot2)
 library(topGO)
 
-FILE= 'h12_vs_h0_FC_2_adjP_1e-04_diffNGS'    
+FILE <- 'h12_vs_h0_FC_2_adjP_1e-04_diffNGS'    
 regions <- 'DOWN'  # UP or DOWN
 #======================================================================================
 
 x <- read.csv(paste(FILE,"csv", sep='.'), header=T)
-head(x)
-dim(x)
 
 if (regions =='UP'){
   x <- x[ which(x$diff == 'TRUE.Up'), ]
@@ -43,20 +37,12 @@ for (i in 1:nrow(x)){
 # Get gene names #
 hgnc_symbol <- newX 
 
-length( hgnc_symbol )
-
 results <- data.frame(hgnc_symbol =hgnc_symbol ,One=1 )
-head(results)
-
-library("biomaRt")
 
 ensembl = useMart("ENSEMBL_MART_ENSEMBL",dataset="hsapiens_gene_ensembl", host="oct2014.archive.ensembl.org")
-
 my_chr <- c(1:22, 'X', 'Y')
 
-
 SELECTED <- as.character(results$hgnc_symbol )
-
 
 my_entrez_gene <- getBM(attributes='entrezgene',
                         filters = 'hgnc_symbol',
@@ -67,7 +53,6 @@ universe_entrez_gene <- getBM(attributes='entrezgene',
                               filters = 'chromosome_name',
                               values = my_chr,
                               mart = ensembl)
-
 
 # GOHyperGParams
 params <- new('GOHyperGParams',
@@ -87,8 +72,5 @@ result <- summary(hgOver)
 head(result,10)
 
 write.table(x=result,   file = paste(FILE,'GOstats_pvalueCutoff=0.001',regions,'txt',sep='.'),   append = FALSE, quote = F, sep = "\t", row.names = F, col.names = T)
-
-
-
 
 
