@@ -1,7 +1,6 @@
 library(org.Hs.eg.db)
 library(GO.db)
 library(GOstats)
-library(KEGG.db)
 library(limma)
 library(biomaRt)
 library(topGO)
