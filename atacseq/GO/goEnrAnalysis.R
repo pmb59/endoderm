@@ -3,9 +3,7 @@ library(GO.db)
 library(GOstats)
 library(KEGG.db)
 library(limma)
-library(KEGG.db)
 library(biomaRt)
-library(ggplot2)
 library(topGO)
 
 FILE <- 'h12_vs_h0_FC_2_adjP_1e-04_diffNGS'    
