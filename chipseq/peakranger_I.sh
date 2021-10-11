@@ -1,11 +1,9 @@
 #!/bin/bash
 
-
 #Peak calling for ChIP-seq data
 
-input1="../peakranger/INPUT1.bam"
-input2="../peakranger/INPUT2.bam"
-
+input1="$(pwd)/peakranger/INPUT1.bam"
+input2="$(pwd)/peakranger/INPUT2.bam"
 
 # H3K4me3
 for i in 1 2 3 4 5 6 7 8 9 10 ; do
@@ -26,7 +24,6 @@ done
 for i in  107 108 109 110 111 ; do
 peakranger ccat -d ${dir3}SP${i}.bam   -c ${input2} --format bam -l 316 -t 2 --win_size 1000 --win_step 100 --min_count 70 --min_score 7 -q 0.05 -o H3K27me3_SP${i} ;
 done
-
 
 # H3K4me1
 for i in 31 32 33 34 35 36 37 38 39 40 ; do
