@@ -5,7 +5,6 @@ Usage: getinsertsize.py <SAM file> or samtools view <BAM file> | getinsertsize.p
 Author: Wei Li
 '''
 
-
 from __future__ import print_function
 import sys;
 import pydoc;
