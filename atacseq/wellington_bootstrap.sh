@@ -7,9 +7,9 @@ for i in h0_h12 h12_h24 h24_h36 h36_h48 h48_h72 ; do
 mkdir bootstrap_${i};
 done
 
-DATADIR="../mergedBams/"
-OUTDIR="../wellington"
-BED="../wellington/extended.bed"  # EPIGENODE_merged_ATAC_peaks.bed, extended 50bp each colum (start and end)
+DATADIR="$(pwd)/mergedBams/"
+OUTDIR="$(pwd)/wellington"
+BED="$(pwd)/wellington/extended.bed"  # EPIGENODE_merged_ATAC_peaks.bed, extended 50bp each colum (start and end)
 
 #---------------------------------
 # Get differential footprints
@@ -25,7 +25,5 @@ wellington_bootstrap.py -p 16 -A -fdr 0.05 --FDR_limit -10 -fp 4,30,1 -fdriter 1
 #5
 wellington_bootstrap.py -p 16 -A -fdr 0.05 --FDR_limit -10 -fp 4,30,1 -fdriter 100 ${DATADIR}ATAC13-14.bam ${DATADIR}ATAC15-16.bam ${BED} ${OUTDIR}/bootstrap_h48_h72/h48_only ${OUTDIR}/bootstrap_h48_h72/h72_only 
 
-
 # Output files can be found at
 # http://ngs.sanger.ac.uk/production/endoderm/
-
