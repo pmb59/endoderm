@@ -2,7 +2,7 @@
 
 Source code of the manuscript:
 
-Madrigal P, Pauklin P, Goh KJ, Grandy R, Osnato A, Ortmann D, Brown S, Vallier L. **Epigenetic regulations follow cell cycle progression during differentiation of human pluripotent stem cells**. [bioRxiv](https://doi.org/10.1101/2020.06.26.173211), 2020
+Madrigal P, et al. **Epigenetic and transcriptional regulations prime cell fate before cell division during human pluripotent stem cell differentiation**
 
 Processed data
 -------
