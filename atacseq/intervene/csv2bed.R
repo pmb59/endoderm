@@ -7,7 +7,7 @@ for ( i in inputs ){
   
   readcsv <- read.csv( i, head=TRUE )
 
-  write.table( readcsv[,1:3], file = paste0( i,'.bed' ) , append = FALSE, quote = FALSE, sep = "\t",
+  write.table( readcsv[,1:3], file = paste0( i,'.bed' ), append = FALSE, quote = FALSE, sep = "\t",
               eol = "\n", na = "NA", dec = ".", row.names = FALSE,
               col.names = FALSE)
 }
