@@ -1,5 +1,5 @@
 
-mamba create -n interveve interveve -c bioconda
+mamba create -n intervene intervene -c bioconda
 conda activate intervene
 wget http://ngs.sanger.ac.uk/production/endoderm/hg38/diffNGS.Diff_Open_Chromatin_Regions.FC_2_adjP_1e-04.zip
 unzip diffNGS.Diff_Open_Chromatin_Regions.FC_2_adjP_1e-04.zip
