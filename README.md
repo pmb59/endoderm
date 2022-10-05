@@ -15,3 +15,7 @@ Raw data
 [E-MTAB-9194](https://www.ebi.ac.uk/biostudies/studies/E-MTAB-9194/)
 
 [E-MTAB-9276](https://www.ebi.ac.uk/biostudies/studies/E-MTAB-9276/)
+
+Contact
+-------
+For questions on the computational analysis: [Pedro Madrigal](https://www.ebi.ac.uk/people/person/pedro-madrigal). For questions on the experimental work: [Siim Pauklin](https://www.ndorms.ox.ac.uk/research/research-groups/pauklin-group-tgfss-signalling-in-cancer-stem-cells)
