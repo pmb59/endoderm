@@ -18,4 +18,4 @@ Raw data
 
 Contact
 -------
-For questions on the computational analysis: [Pedro Madrigal](https://www.ebi.ac.uk/people/person/pedro-madrigal). For questions on the experimental work: [Siim Pauklin](https://www.ndorms.ox.ac.uk/research/research-groups/pauklin-group-tgfss-signalling-in-cancer-stem-cells).
+For questions on the computational analysis: [Pedro Madrigal](https://www.ebi.ac.uk/people/person/pedro-madrigal). For questions on the experimental work: [Siim Pauklin](https://www.ndorms.ox.ac.uk/research/research-groups/pauklin-group-tgfss-signalling-in-cancer-stem-cells)
