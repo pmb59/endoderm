@@ -2,7 +2,7 @@
 
 Source code of the manuscript:
 
-Madrigal P, et al. **Epigenetic and transcriptional regulations prime cell fate before division during human pluripotent stem cell differentiation**
+Madrigal P, et al. [Epigenetic and transcriptional regulations prime cell fate before division during human pluripotent stem cell differentiation](https://doi.org/10.1038/s41467-023-36116-9) _**Nature Communications**_ 2023
 
 Processed data
 -------
