@@ -8,8 +8,12 @@ Processed data
 -------
 All processed genome-wide datasets are publicly accessible in a genome browser at http://ngs.sanger.ac.uk/production/endoderm
 
+A backup copy of the processed data files has been deposited in Zenodo ([chip](https://doi.org/10.5281/zenodo.7513232), [atac](https://doi.org/10.5281/zenodo.7514349), [rna](https://doi.org/10.5281/zenodo.7514351)).
+
 Raw data
 -------
+Raw datasets are publicly available in the ArrayExpress collection of BioStudies.
+
 [E-MTAB-9124](https://www.ebi.ac.uk/biostudies/studies/E-MTAB-9124/)
 
 [E-MTAB-9194](https://www.ebi.ac.uk/biostudies/studies/E-MTAB-9194/)
