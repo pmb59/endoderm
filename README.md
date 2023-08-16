@@ -8,9 +8,9 @@ Processed data
 -------
 All processed genome-wide datasets are publicly accessible in a genome browser at http://ngs.sanger.ac.uk/production/endoderm
 
-Gene expression dataa is also available at [Expression Atlas](https://www.ebi.ac.uk/gxa/experiments/E-MTAB-9194).
-
 A backup copy of the processed data files has been deposited in Zenodo ([chip](https://doi.org/10.5281/zenodo.7513232), [atac](https://doi.org/10.5281/zenodo.7514349), [rna](https://doi.org/10.5281/zenodo.7514351)).
+
+Gene expression data is also available at EMBL-EBI's resource [Expression Atlas](https://www.ebi.ac.uk/gxa/experiments/E-MTAB-9194).
 
 Raw data
 -------
